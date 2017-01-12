@@ -97,9 +97,25 @@ var detail = function () {
                 type: 'get',
                 success: function (data) {
                     __this.tooltip('show');
-                    setTimeout(function(){
+                    setTimeout(function () {
                         __this.tooltip('hide');
-                    },3000)
+                    }, 3000)
+                }
+            })
+        });
+
+        $("#collect").click(function () {
+            var __this = $(this);
+            $resId = __this.attr("data-res-id");
+            __this.attr();
+            $.ajax({
+                url: "/my/collect/add/" + $resId,
+                type: 'get',
+                success: function () {
+                    __this.tooltip('show');
+                    setTimeout(function () {
+                        __this.tooltip('hide');
+                    }, 3000)
                 }
             })
         });

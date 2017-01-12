@@ -90,8 +90,13 @@ create table eo_resources_grades(
 )
 
 
-
-
+create table eo_collects(
+    id int auto_increment primary key,
+    user_id int not null,
+    resource_id int not null,
+    created_at datetime,
+    update_at datetime
+)
 
 
 

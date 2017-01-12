@@ -171,7 +171,10 @@
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>退出登录</a></li>
+                                {{--<li><a href="{{ url('/collect') }}"><i class="glyphicon glyphicon-folder-open"> </i>--}}
+                                        {{--我的收藏</a></li>--}}
+                                <li><a href="{{ url('/logout') }}" style="color: red;"><i
+                                                class="glyphicon glyphicon-log-out"> </i> 退出登录</a></li>
                             </ul>
                         </li>
                     @endif

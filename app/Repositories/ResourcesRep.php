@@ -21,11 +21,11 @@ class ResourcesRep {
             })->selectRaw($selectStr)->where([
                 'resources.type' => $i,
                 "resources.status" => 1,
-//                "a.status" => 1,
-//                "b.status" => 1,
-//                "c.status" => 1,
-// 如果注释资源所属分类已经关闭,该分类下资源仍会被正常查找
-//如果不注释,category_3或category_2值为0的资源无法被判定为c.status=1,无法找出
+                //                "a.status" => 1,
+                //                "b.status" => 1,
+                //                "c.status" => 1,
+                // 如果注释资源所属分类已经关闭,该分类下资源仍会被正常查找
+                //如果不注释,category_3或category_2值为0的资源无法被判定为c.status=1,无法找出
             ])->limit(8)->get();
         }
         return $result;

@@ -20,6 +20,10 @@ var helper = function () {
                 window.event.returnValue = false;
             }
         }
+    };
+
+    this.showResult = function () {
+
     }
 };
 
