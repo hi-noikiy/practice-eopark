@@ -1,0 +1,32 @@
+.nav-tabs a{
+    font-weight: 600;
+}
+.modal-content .modal-header {
+    border-bottom: none;
+}
+
+.login{
+    width: 40%;
+    margin: 5em 30%;
+    padding: 2em;
+    border: 1px solid darkgray;
+    border-radius: 1em;
+    -moz-box-shadow: 10px 10px 5px #888888; /* 老的 Firefox */
+    box-shadow: 10px 10px 5px rgba(136, 136, 136, 0.57);
+}
+.login-footer{
+    text-align: center;
+    padding-top: 2em;
+}
+.login-footer .btn-primary{
+    text-align: center;
+    letter-spacing:1.5em;
+    text-indent:1.5em;
+    font-weight: 600;
+
+}
+
+.modal-body{
+    border:  1px solid lightgray;
+    border-top: none;
+}

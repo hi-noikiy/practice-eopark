@@ -1,0 +1,108 @@
+create table eo_folders(
+    id int primary key auto_increment,
+    folder_name varchar(32) not null,
+    order_id int not null,
+    user_id int not null
+);
+
+create table eo_collects(
+     id int primary key auto_increment,
+     folder_id int,
+     url_name varchar(12) not null,
+     url text not null,
+     order_id int not null ,
+     icon varchar(255),
+     created_at datetime,
+     updated_at datetime,
+    foreign key(id) references eo_folder(id) on delete cascade on update cascade
+)
+
+create table eo_users(
+   id int primary key auto_increment,
+   email varchar(20),
+   user_name varchar(20),
+   password varchar(60)
+)
+
+create table eo_categories(
+    id int primary key auto_increment,
+    name varchar(16) not null,
+    parent_id int not null,
+    depth int not null,
+    priority int default 0,
+    created_at datetime,
+    updated_at datetime
+)
+
+create table eo_resources(
+    id int primary key auto_increment,
+    title varchar(50) not null,
+    introduce varchar(255),
+    cover  varchar(255) ,
+    views int  default 0,
+    plays int default 0,
+    likes int default 0,
+    from_domain varchar(32) ,
+    from_domain_name varchar(32) ,
+    author varchar(32),
+    type int not null,
+    category int not null,
+    score int  not null default 0 ,
+    link text ,
+    contributor int default 0,
+    status boolean default 0,
+    created_at datetime ,
+    updated_at datetime
+)
+
+create table eo_thanks(
+    id int primary key auto_increment,
+    user_id int default 0,
+    gratitude varchar(140) default "",
+    special varchar(140) default "",
+    wish varchar(140) default "",
+    state boolean default 0,
+    created_at datetime,
+    updated_at datetime
+)
+
+create table eo_comments(
+    id int primary key auto_increment,
+    user_id int not null,
+    reply int default 0,
+    comment varchar(141) not null,
+    resource_id int not null,
+    likes int default 0,
+    status  boolean default 1,
+    likes_user_id  LONGTEXT default ",",
+    created_at datetime,
+    updated_at datetime
+)
+
+
+create table eo_resources_grades(
+   id int auto_increment primary key,
+   user_id int not null,
+   resource_id int not null ,
+   grade double not null,
+   created_at datetime,
+   updated_at datetime
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

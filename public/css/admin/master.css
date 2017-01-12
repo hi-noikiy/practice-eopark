@@ -1,0 +1,64 @@
+body {
+    /*width: 80%;*/
+    /*margin-left: 10%;*/
+}
+
+.top .navbar {
+    padding-left: 10%;
+    margin: 0;
+}
+
+.top-message {
+    width: 20%;
+    margin-left: 40%;
+    position: absolute;
+    text-align: center;
+    display: none;
+}
+
+.left-warp {
+    background: lightblue;
+    width: 10%;
+    top: 52px;
+    position: absolute;
+    left: 0;
+}
+
+.left-warp .panel-body {
+    padding: 0;
+}
+
+.right-warp {
+    width: 90%;
+    margin-left: 10%;
+}
+.btn-delete{
+    color: red;
+    margin-left: 3em;
+}
+
+.right-head-warp {
+    padding: 10px 2em;
+    background: rgb(238, 245, 247);;
+}
+
+.glyphicon-chevron-down, .glyphicon-chevron-up {
+    cursor: pointer;
+}
+.status-container {
+    width: 20em;
+    text-align: center;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 40%;
+}
+
+.copyright {
+    text-align: center;
+    width: 100%;
+}
+.form-horizontal .radio, .form-horizontal .checkbox{
+    min-height: 27px;
+    display: inline;
+}

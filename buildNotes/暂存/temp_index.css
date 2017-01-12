@@ -1,0 +1,131 @@
+/*个人导航 user-nev*/
+/*.user-nev {*/
+/*padding-left: 20%;*/
+/*padding-right: 20%;*/
+/*}*/
+
+/*.user-nev .dropdown {*/
+/*margin-left: 1em*/
+/*}*/
+
+/*.user-nev .dropdown a {*/
+/*text-decoration: none;*/
+/*}*/
+
+/*.nev-ul li i {*/
+/*vertical-align: sub;*/
+/*}*/
+
+/*.nev-ul li p, .nev-ul li {*/
+/*line-height: 3.5em;*/
+/*}*/
+
+/*.user-nev .folder-div > ul {*/
+/*overflow: hidden;*/
+/*width: 100%;*/
+/*padding: 0;*/
+/*position: relative;*/
+/*text-align: center;*/
+/*}*/
+
+/*.user-nev .folder-div > ul > li {*/
+/*float: left;*/
+/*line-height: 3em;*/
+/*width: 20%;*/
+/*height: 3.5em;*/
+/*border: 1px solid darkgray;*/
+/*cursor: pointer;*/
+/*border-radius: 8px;*/
+/*}*/
+
+/*.user-nev li:hover {*/
+/*background: #e6e8e6;*/
+/*}*/
+
+/*!*浏览纪录 history-div*!*/
+/*.user-history {*/
+/*padding-left: 20%;*/
+/*padding-right: 20%;*/
+/*}*/
+
+/*.history-title {*/
+/*background: darkgray;*/
+/*height: 2em;*/
+/*line-height: 2em;*/
+/*position: absolute;*/
+/*bottom: 0;*/
+/*width: 100%;*/
+/*-webkit-border-bottom-left-radius: 8px;*/
+/*-webkit-border-bottom-right-radius: 8px;*/
+/*color: white;*/
+/*font-weight: 400;*/
+/*}*/
+
+/*#history-more {*/
+/*float: right;*/
+/*cursor: pointer;*/
+/*}*/
+
+/*.user-history ul {*/
+/*overflow: hidden;*/
+/*width: 100%;*/
+/*padding: 0;*/
+/*position: relative;*/
+/*text-align: center;*/
+/*}*/
+
+/*.user-history ul li {*/
+/*line-height: 6em;*/
+/*height: 6em;*/
+/*width: 20%;*/
+/*border: 1px solid darkgray;*/
+/*float: left;*/
+/*cursor: pointer;*/
+/*border-radius: 8px;*/
+/*position: relative;*/
+/*}*/
+
+/*.user-history li:hover p {*/
+/*background: black;*/
+/*}*/
+
+/*.user-history li:hover {*/
+/*background: #e6e8e6;*/
+/*}*/
+
+/*#dialog-add, #dialog-edit, #dialog-group {*/
+/*display: none;*/
+/*}*/
+
+/*.modal-footer h4 {*/
+/*background: #428bca;*/
+/*text-align: center;*/
+/*border-radius: 6px;*/
+/*margin-bottom: 15px;*/
+/*color: white;*/
+/*padding: 8px 1em;*/
+/*display: none;*/
+/*}*/
+
+/*#create-folder {*/
+/*margin-bottom: 1em;*/
+/*text-align: right;*/
+/*cursor: pointer;*/
+/*}*/
+
+/*#create-folder span {*/
+/*font-size: 18px;*/
+/*vertical-align: super;*/
+/*}*/
+
+/*#myModal i {*/
+/*cursor: pointer;*/
+/*}*/
+
+/*.folder-name .fa-caret-right {*/
+/*visibility: hidden;*/
+/*}*/
+
+/*.nev-ul-li a {*/
+/*text-decoration: none;*/
+/*}*/

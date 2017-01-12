@@ -1,0 +1,323 @@
+/*============================================================================*/
+/*==================================thanksgiving==============================*/
+/*============================================================================*/
+.thanksgiving {
+    width: 80%;
+    margin-left: 10%;
+    background: ghostwhite;
+    /*display: table;*/
+    margin-top: 1em;
+    margin-bottom: 1em;
+    position: relative;
+    min-height: 40em;
+}
+
+.thanksgiving .thanks {
+    width: 49%;
+    /*display: table-cell;*/
+    background: tomato;
+    border-radius: 1em;
+    padding-bottom: 3.46em;
+    /*display: none;*/
+    float: left;
+
+}
+
+.thanksgiving .thanks button {
+    background: black;
+    border: 1px solid black;
+    color: tomato;
+}
+
+.thanksgiving .giving {
+    width: 49%;
+    display: table-cell;
+    background: #60aff4;
+    padding-bottom: 4em;
+    border-radius: 1em;
+    float: right;
+}
+
+.thanksgiving .giving button {
+    background: white;
+    border: #60aff4;
+    color: #60aff4;
+}
+
+.thanksgiving .thanks h3 {
+    color: black;
+    font-weight: 600;
+}
+
+.thanksgiving .giving h3 {
+    font-weight: 600;
+    color: white;
+}
+
+.thanksgiving .head {
+    padding: 2em;
+}
+
+.col-sm-2 {
+    padding: 0;
+}
+
+.thanks .form-horizontal {
+    border: 1px solid black;
+    border-radius: 1em;
+    padding: 1em 5%;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.giving .form-horizontal {
+    border: 1px solid white;
+    color: white;
+    border-radius: 1em;
+    padding: 1em 5%;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.thanks input {
+    color: tomato;
+    border: black;
+    font-weight: 600;
+    background: black;
+}
+
+.thanks hr {
+    border: 1px solid black;
+}
+
+.giving hr {
+    border: 1px solid white;
+}
+
+.giving input, .giving select, .giving option, .giving textarea {
+    color: #60aff4;
+    font-weight: 600;
+}
+
+.contribute-btn {
+    width: 8em;
+    font-weight: 600;
+}
+
+#thanksgiving-middle {
+    width: 2%;
+    float: left;
+    /*display: table-cell;*/
+}
+
+/*thanks-back*/
+.thanks-back {
+    background: tomato;
+    /*display: table-cell;*/
+    border-radius: 1em;
+    padding-bottom: 4em;
+    float: left;
+    width: 49%;
+    height: 30em;
+
+}
+
+/*.thanks-back-warper {*/
+
+/*}*/
+
+/*翻转效果*/
+
+.thanksgiving {
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
+}
+
+.face {
+    position: absolute;
+    /*border-radius: 5px;*/
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    transition: all 1s ease;
+    backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    /*background-color: rgb(178, 39, 49);*/
+    /*background: blue;*/
+}
+
+.front {
+    z-index: 10;
+}
+
+.back {
+    transform: rotate3d(0, 1, 0, -180deg);
+    -ms-transform: rotate3d(0, 1, 0, -180deg);
+    /* IE 9 */
+    -moz-transform: rotate3d(0, 1, 0, -180deg);
+    /* Firefox */
+    -webkit-transform: rotate3d(0, 1, 0, -180deg);
+    /* Safari 和 Chrome */
+    /*-o-transform: rotateY(0, 1 , 0, -180deg);*/
+    /* Opera */
+    z-index: 8;
+}
+
+.card-flipped .front {
+    transform: rotate3d(0, 1, 0, 180deg);
+    -ms-transform: rotate3d(0, 1, 0, 180deg);
+    /* IE 9 */
+    -moz-transform: rotate3d(0, 1, 0, 180deg);
+    /* Firefox */
+    -webkit-transform: rotate3d(0, 1, 0, 180deg);
+    /* Safari 和 Chrome */
+    -o-transform: rotate3d(0, 1, 0, 180deg);
+    /* Opera */
+    z-index: 8;
+}
+
+.card-flipped .back {
+    transform: rotate3d(0, 1, 0, 0deg);
+    -ms-transform: rotate3d(0, 1, 0, 0deg);
+    /* IE 9 */
+    -moz-transform: rotate3d(0, 1, 0, 0deg);
+    /* Firefox */
+    -webkit-transform: rotate3d(0, 1, 0, 0deg);
+    /* Safari 和 Chrome */
+    -o-transform: rotate3d(0, 1, 0, 0deg);
+    /* Opera */
+    z-index: 10;
+}
+
+.thanks-back-warper {
+    color: white;
+}
+
+.thanks-words {
+    text-align: left;
+    border: 1px solid white;
+    width: 90%;
+    margin-left: 5%;
+    border-radius: 1em;
+    padding: 1em;
+}
+
+.thanks-words h3 {
+    padding: 0.25em 0;
+}
+
+.thanks-words i {
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+}
+
+/*a  upload */
+.a-upload {
+    padding: 4px 10px;
+    height: 2em;
+    line-height: 20px;
+    position: relative;
+    cursor: pointer;
+    color: #888;
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1
+}
+
+.a-upload input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer
+}
+
+.a-upload:hover {
+    color: #444;
+    background: #eee;
+    border-color: #ccc;
+    text-decoration: none
+}
+
+#preview {
+    visibility: hidden;
+    display: inline-block;
+    width: 1.9em;
+    height: 1.9em;
+    vertical-align: baseline;
+    border-radius: 3px;
+}
+
+.myType {
+    margin-left: 2em;
+}
+
+#filelist {
+    display: inline-block;
+}
+
+#category2, #category3 {
+    display: none;
+}
+
+#message-giving > p {
+    text-align: center;
+    height: 3em;
+    line-height: 3em;
+    border-radius: 6px;
+    display: none;
+    font-weight: 600;
+}
+
+#giving-error {
+    background: #f92828;
+}
+
+#giving-success {
+    background: #19a002;
+}
+
+textarea {
+    resize: none;
+}
+
+.thanks textarea {
+    background: black;
+    border: none;
+    color: tomato;
+    font-weight: 600;
+}
+
+.thanks {
+    color: black;
+}
+
+#thanks-message > p {
+    text-align: center;
+    height: 3em;
+    line-height: 3em;
+    border-radius: 6px;
+    font-weight: 600;
+    display: none;
+}
+
+#thanks-message {
+    min-height: 3em;
+}
+
+#thanks-success {
+    background: #19a002;
+}
+
+#thanks-error {
+    background: gold;
+}

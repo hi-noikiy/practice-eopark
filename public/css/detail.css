@@ -1,0 +1,260 @@
+/*============================================================================*/
+/*====================================detail================================*/
+/*============================================================================*/
+.path {
+    width: 70%;
+    height: 2em;
+    line-height: 2em;
+    margin-left: 17%;
+    border-bottom: 1px black solid;
+}
+
+.detail-subject {
+    width: 70%;
+    margin-left: 15%;
+    padding: 20px 2%;
+    display: table;
+}
+
+.detail-subject-summary {
+    width: 60%;
+    display: table-cell;
+    min-width: 550px;
+}
+
+.detail-subject-summary h3 {
+    word-wrap: break-word;
+    word-break:break-all;
+}
+
+.detail-subject-summary img {
+    width: 118px;
+    height: 172px;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 8px;
+}
+
+.detail-subject-summary dl {
+    display: inline-block;
+    padding: 0 1%;
+    min-width: 10em;
+    margin: 0;
+}
+
+.detail-subject-summary .grade {
+    float: right;
+    margin-right: 2%;
+    min-height: 160px;
+    border-left: 1px solid black;
+    vertical-align: top;
+    display: inline-block;
+    padding: 10px;
+    min-width: 24%;
+}
+
+
+#grade {
+    font-weight: 800;
+    font-size: 2em;
+}
+
+.detail-subject-to {
+    width: 39.5%;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+.detail-container {
+    width: 70%;
+    margin-left: 15%;
+    padding: 20px 0;
+    display: table;
+}
+
+.breadcrumb {
+    width: 70%;
+    margin-left: 17%;
+}
+
+.detail-container-left {
+    padding:0 3% 2% 3%;
+    width: 60%;
+    height: 10em;
+    display: table-cell;
+}
+
+.form-control {
+    resize: none;
+}
+
+#detail-comment-count {
+    text-align: center;
+    margin-top: 6px;
+    height: 3em;
+    padding: 0em 1em;
+}
+
+#detail-comment-count div {
+    display: inline-block;
+    float: left;
+    height: 2.2em;
+    line-height: 2.2em;
+}
+
+.comment-emoji {
+    width: 30%;
+    text-align: left;
+}
+
+.comment-status {
+    width: 40%;
+    color: white;
+    font-weight: 600;
+    border-radius: 0.5em;
+}
+
+.comment-button {
+    width: 30%;
+    text-align: right;
+}
+
+.comment-emoji {
+    /*float: left;*/
+    /*margin-left: 1em;*/
+}
+
+.detail-comment {
+    margin-top: 2em;
+}
+
+.detail-comment ul {
+    border-bottom: 1px solid #d0d0d0;
+}
+
+.detail-comment li {
+    padding: 1em;
+    border-top: 1px solid #d0d0d0;
+}
+
+.comment-userhead {
+    height: 42px;
+    width: 42px;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.comment-text {
+    padding: 0 1em;
+    width: 90%;
+    display: inline-block;
+}
+
+.comment-text .user-name {
+    color: #357ebd;
+    font-weight: 600;
+}
+
+.comment-text-bottom {
+    text-align: right;
+}
+
+.comment-text-date {
+    float: left;
+    color: rgb(173, 173, 173);
+}
+
+.detail-container-right {
+    padding: 0 5%;
+    display: table-cell;
+}
+
+.detail-container-right li img {
+    height: 42px;
+    width: 42px;
+    border-radius: 8px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.detail-container-right li {
+    padding: 10px 0;
+
+}
+
+.detail-container-right li .related {
+    display: inline-block;
+    width: 80%;
+}
+
+.comment-likes {
+
+}
+
+.comment-likes:hover {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.reply:hover {
+    cursor: pointer;
+    color: darkblue;
+    font-weight: 600;
+}
+
+#star{
+    display: inline-block
+}
+#star ul, #star span {
+    float: left;
+    display: inline;
+    height: 19px;
+    line-height: 19px;
+}
+
+/*#star ul{margin:0 10px;}*/
+#star li {
+    float: left;
+    width: 20px;
+    cursor: pointer;
+    text-indent: -9999px;
+    background: url(/img/star.png) no-repeat;
+}
+
+#star strong {
+    color: #f60;
+    padding-left: 10px;
+}
+
+#star li.on {
+    background-position: 0 -28px;
+}
+
+#star p {
+    position: absolute;
+    top: 20px;
+    width: 159px;
+    height: 60px;
+    display: none;
+    background: url(/img/icon.gif) no-repeat;
+    padding: 7px 10px 0;
+}
+
+#star p em {
+    color: #f60;
+    display: block;
+    font-style: normal;
+}
+
+.page_bottom{
+    text-align: center;
+}
+
+.detail-introduce{
+    padding-top: 1em;
+    word-wrap: break-word;
+    word-break:break-all;
+}

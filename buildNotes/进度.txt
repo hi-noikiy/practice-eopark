@@ -1,0 +1,50 @@
+2016年11月21日21:50:57
+admin/resourceEdit/
+
+2016年11月23日21:14:09
+待修复bug
+1.thanksgiving giving栏目,分类ajax卡顿严重.
+   分类选择后,数据库分类数据与选择数据不一致
+2 index,添加使用回车提交
+3 提交编辑资料时,使用的&分割字符串,如果url中带有&,数据错误
+4 score 保存为double类型,否则每次使用需要转换
+5 存入资源时,url在后台判断添加http://
+6 SQLSTATE[42S22]: Column not found: 1054 Unknown column 'remember_token' in 'field list' (SQL: update `eo_users` set `updated_at` = 2016-12-02 15:31:41, `remember_token` = WtxcaEFxlBLULxW6SCRXO59U3RN9qyrrQ7zn3US8V9HEPndCpx0VQzto7qna where `id` = 21)
+6 忘记密码功能
+7 index 新建文件夹后,除新建的文件夹,剩余文件夹展开缩放功能失效
+8 文件夹展开缩放功能不能保存,刷新后即无效
+9 新增文件夹名没有字数限制,太长样式会乱
+10 collect表 url_name 字段12个字符,用户输入太长会被自动截取
+11 detail 评论查看更多功能
+13 detail url用户输入某个不存在的resourceId值,由于没有结果,会报错.
+
+
+2016年12月22日21:17:46
+功能待完成
+resources 页面
+(1) 筛选功能
+    1若不是最终一级显示下级分类
+    2若是最终一级,显示更详细的筛选,类似京东等购物网站筛选
+    2.1筛选选项类别:
+     通用①品牌 (知名站点)
+     通用②分数
+//laravel 与phpstorm插件安装
+http://blog.csdn.net/diannet/article/details/47616167
+
+
+2017年1月3日 22:03:28
+待办事项
+1 评分统计,后台固定时间更新评分
+2 category页面,顶部分类,点击后的分类项,hover事件失效
+3 admin 全选功能
+//4 资源详情页,反馈功能,反馈失效连接
+
+2017年1月6日 15:30:30
+待办事项
+1后台显示反馈连接失效数据
+2 thanksgiving 留白问题,解决方案:1先隐藏背面,2每次翻转时获取翻转后的高度,设置父容器为该高度
+
+
+thanksgiving 属性不清零,且没有归零选项
+category 三个背景,高度不同,text没有图标
+
