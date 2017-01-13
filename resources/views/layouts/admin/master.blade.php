@@ -14,12 +14,12 @@
 </head>
 <body>
 @section('top')
-    @include('include.admin.top')
+    @include('parts.admin.top')
 @show
 @section("content")
 @show
 @section("footer")
-    @include('include.admin.footer')
+    @include('parts.admin.footer')
 @show
 </body>
 </html>

@@ -14,7 +14,7 @@
                 <input type="text" class="form-control" name="priority" value="">
             </div>
         </div>
-        @include("include.common.switch",["status"=>1])
-        @include("include.admin.parts.form_submit_btn")
+        @include("parts.common.switch",["status"=>1])
+        @include("parts.admin.form_submit_btn")
     </form>
 @stop

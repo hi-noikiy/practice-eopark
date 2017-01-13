@@ -43,9 +43,12 @@ Route::group([
     Route::get('/feedback/invalid/{resourceId}', 'FeedbackController@invalid')->where('resourceId', '[0-9]+');
     Route::get('/feedback/opinion', 'FeedbackController@opinion');
 
-    /*collect*/
-    Route::get('/my/collect', 'CollectController@index');
-    Route::get('/my/collect/delete/{collectId}', 'CollectController@delete');
+    /* My-* */
+    Route::get('/my/collect', 'MyCollectController@index');
+    Route::get('/my/collect/add/{resourceId}', 'MyCollectController@add');
+    Route::get('/my/collect/delete/{collectId}', 'MyCollectController@delete');
+
+    Route::get('/my/letter', 'MyLetterController@index');
 });
 
 Route::group([

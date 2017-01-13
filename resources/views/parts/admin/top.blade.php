@@ -29,4 +29,4 @@
     <div class="alert alert-danger top-message" role="alert">...</div>
     <input type="hidden" name="_token" class="_token" value="{{csrf_token()}}">
 </div>
-@include("include.common.operation_message")
+@include("parts.common.operation_message")

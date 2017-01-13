@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('content')
     <link rel="stylesheet" href="/css/resource.css">
-    <script language="JavaScript" src="{{ URL::asset('/') }}js/resources.js"></script>
 
     <div class="resource">
         <div class="resource-header">
@@ -121,45 +120,39 @@
             </div>
 
             <div class="row rc-body">
-                @if(count($resources))
-                    @foreach($resources as $resource)
-                        <div class="col-sm-4 col-md-2 rc-body-item">
-                            <a href="/detail/{{$resource->id}}">
-                                <div class="thumbnail">
-                                    <img class="thumbnail-cover" src="{{$resource->cover ? $resource->cover : '/img/onError.jpg'}}">
-                                    <div class="caption">
-                                        <div class="rc-score-warp">
-                                            @if((int)$resource->score)
-                                                <span class="score">{{ $resource->score }}</span>
-                                            @else
-                                                <span class="score">\</span>
-                                            @endif
-                                            @if((int)$resource->score)
-                                                <span class="scored-numbers">{{numberAdapter($resource->scored_numbers)}}
-                                                    人打分</span>
-                                            @endif
-                                        </div>
-                                        <h5>{{$resource->title}}</h5>
-                                        <p class="rc-comment">{{ numberAdapter($resource->comment_numbers)}}条评论</p>
+                @foreach($resources as $resource)
+                    <div class="col-sm-4 col-md-2 rc-body-item">
+                        <a href="/detail/{{$resource->id}}">
+                            <div class="thumbnail">
+                                <img class="thumbnail-cover"
+                                     src="{{$resource->cover ? $resource->cover : '/img/onError.jpg'}}">
+                                <div class="caption">
+                                    <div class="rc-score-warp">
+                                        @if((int)$resource->score)
+                                            <span class="score">{{ $resource->score }}</span>
+                                        @else
+                                            <span class="score">\</span>
+                                        @endif
+                                        @if((int)$resource->score)
+                                            <span class="scored-numbers">{{numberAdapter($resource->scored_numbers)}}
+                                                人打分</span>
+                                        @endif
                                     </div>
+                                    <h5>{{$resource->title}}</h5>
+                                    <p class="rc-comment">{{ numberAdapter($resource->comment_numbers)}}条评论</p>
                                 </div>
-                            </a>
-                        </div>
-                    @endforeach
-                @else
-                    <div class="jumbotron">
-                        <h2>无内容</h2>
+                            </div>
+                        </a>
                     </div>
-                @endif
+                @endforeach
             </div>
+            @include("parts.common.page_number",["data"=>$resources])
         </div>
-        @if(count($resources))
-            <div class="page_bottom">
-                <?php echo $resources->render(); ?>
-            </div>
-        @endif
+
     </div>
     @if(isset($selectedIds))
         <textarea id="filter-selected">{{ $selectedIds }}</textarea>
     @endif
+
+    <script language="JavaScript" src="{{ URL::asset('/') }}js/resources.js"></script>
 @stop

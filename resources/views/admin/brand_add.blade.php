@@ -22,7 +22,7 @@
                 <span class="help-block">默认优先级为:最低</span>
             </div>
         </div>
-        @include("include.common.switch",["status"=>1])
+        @include("parts.common.switch",["status"=>1])
         <div class="form-group">
             <label for="firstname" class="col-sm-2 control-label">品牌LOGO</label>
             <div class="col-sm-8">
@@ -35,6 +35,6 @@
                 <input type="text" class="form-control" name="brand_logo_url">
             </div>
         </div>
-        @include("include.admin.parts.form_submit_btn")
+        @include("parts.admin.form_submit_btn")
     </form>
 @stop

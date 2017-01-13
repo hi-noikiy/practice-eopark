@@ -106,18 +106,49 @@ var detail = function () {
 
         $("#collect").click(function () {
             var __this = $(this);
-            $resId = __this.attr("data-res-id");
-            __this.attr();
-            $.ajax({
-                url: "/my/collect/add/" + $resId,
-                type: 'get',
-                success: function () {
-                    __this.tooltip('show');
-                    setTimeout(function () {
-                        __this.tooltip('hide');
-                    }, 3000)
-                }
-            })
+            var isCollected = __this.attr('data-is-collect');
+            var resId = __this.attr("data-res-id");
+            var collectId = __this.attr("data-collect-id");
+            if (isCollected == "true") {
+                updateData({
+                    'showMessage': "取消成功",
+                    "url": "/my/collect/delete/" + collectId,
+                    "btnType": "default",
+                    "collectStatus": false,
+                    "btnText": "收藏"
+                });
+            } else {
+                updateData({
+                    'showMessage': "收藏成功",
+                    "url": "/my/collect/add/" + resId,
+                    "btnType": "success",
+                    "collectStatus": true,
+                    "btnText": "已收藏"
+                });
+            }
+
+            function updateData(data) {
+                $.ajax({
+                    url: data.url,
+                    type: 'get',
+                    success: function (result) {
+                        if (result == "NOT_LOGIN") {
+                            window.location.href = "/login";
+                            return;
+                        } else {
+                            if (data.collectStatus) {
+                                __this.attr("data-collect-id", result.id);
+                            }
+                        }
+                        __this.attr({
+                            "class": "btn btn-" + data.btnType + " btn-sm",
+                            "data-is-collect": data.collectStatus
+                        });
+                        __this.html(data.btnText);
+                    }
+                })
+            }
+
         });
 
     }

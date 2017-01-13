@@ -66,7 +66,7 @@ class ResourcesModel extends Model {
             unset($where["category_$i"]);
         }
 //        return $query->orderBy($conditions['order'], $conditions['order'] == "created_at" ? "asc" : "desc")->paginate(36);
-        return $query->orderBy($conditions['order'],  "desc")->paginate(30);
+        return $query->orderBy($conditions['order'],  "desc")->paginate(24);
     }
 
     /**
@@ -102,7 +102,7 @@ class ResourcesModel extends Model {
             }
             $result["brand_ids"] = [];
         }
-        $result["resources"] = $queryRes->paginate(36);
+        $result["resources"] = $queryRes->paginate(24);
         return $result;
     }
 

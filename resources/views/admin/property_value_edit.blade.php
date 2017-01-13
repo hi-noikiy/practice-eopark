@@ -4,7 +4,7 @@
 @section("warp")
     <form class="form-horizontal" role="form" style="padding: 2em 20%" action="{{ url()->current() }}/save">
         <input type="hidden" name="id" value="{{ $value->id }}">
-        @include("include.admin.parts.property_select",[
+        @include("parts.admin.property_select",[
             "properties"=>getPropertyGroups(),
             "ownPropertyId"=>$value->prop_id
         ])
@@ -20,7 +20,7 @@
                 <input type="text" class="form-control" name="priority" value="{{$value->priority}}">
             </div>
         </div>
-        @include("include.common.switch",["status"=>$value->status])
+        @include("parts.common.switch",["status"=>$value->status])
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <button type="submit" class="btn btn-default">提交</button>

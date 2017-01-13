@@ -1,5 +1,4 @@
 <td>
-
     @if(isset($operation["delete"]))
         <a href="/admin/brand/delete/{{$operation->id}}"
            class="btn-delete"

@@ -8,7 +8,7 @@
         {{isset($name) ? $name :"未命名"}}
     </td>
     <td>{{isset($priority) ?$priority : 0 }}</td>
-    @include("include.admin.parts.status",['status'=>isset($status) ?$status: 0 ])
+    @include("parts.admin.status",['status'=>isset($status) ?$status: 0 ])
     <td><a href="/admin/category/edit/{{isset($id)?$id : 0}}">编辑</a> |
         <a href="/admin/category/add/{{isset($id)?$id : 0}}">新增下级</a> |
         <a href="/admin/property/assignCategory/{{isset($id)?$id : 0}}">分配属性</a> &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;

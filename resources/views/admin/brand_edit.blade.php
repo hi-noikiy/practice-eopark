@@ -34,7 +34,7 @@
                 <input type="text" class="form-control" name="brand_logo_url" value="{{ $brand->brand_logo }}">
             </div>
         </div>
-        @include("include.common.switch",["status"=>$brand->status])
-        @include("include.admin.parts.form_submit_btn")
+        @include("parts.common.switch",["status"=>$brand->status])
+        @include("parts.admin.form_submit_btn")
     </form>
 @stop

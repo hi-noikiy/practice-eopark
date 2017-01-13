@@ -4,15 +4,6 @@
         {{--<link rel="stylesheet" href="/css/gridstack.css"/>--}}
         <link rel="stylesheet" href="/css/index.css">
 
-        <script src="http://cdn.bootcss.com/jquery-ui-bootstrap/0.5pre/assets/js/jquery-ui-1.10.0.custom.min.js"></script>
-        <script src="http://cdn.bootcss.com/lodash.js/4.17.2/lodash.min.js"></script>
-        <script src="http://cdn.bootcss.com/knockout/3.4.1/knockout-min.js"></script>
-        <script src="http://cdn.bootcss.com/gridstack.js/0.2.6/gridstack.min.js"></script>
-        <script language="JavaScript" src="{{ URL::asset('/') }}js/index.js"></script>
-
-        <!--[if IE]><script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
-
-
         <input type="hidden" name="_token" id="_token" value="{{csrf_token()}}">
         {{--<div class="panel panel-default index-head">--}}
         <div class=" index-head">
@@ -107,4 +98,13 @@
             <textarea id="json-data" style="display: none;">{{ $data }}</textarea>
         @endif
     </div>
+
+    <script src="http://cdn.bootcss.com/jquery-ui-bootstrap/0.5pre/assets/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script src="http://cdn.bootcss.com/lodash.js/4.17.2/lodash.min.js"></script>
+    <script src="http://cdn.bootcss.com/knockout/3.4.1/knockout-min.js"></script>
+    <script src="http://cdn.bootcss.com/gridstack.js/0.2.6/gridstack.min.js"></script>
+    <script language="JavaScript" src="{{ URL::asset('/') }}js/index.js"></script>
+
+    <!--[if IE]><script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+
 @stop

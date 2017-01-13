@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Repositories\Models\CategoriesModel;
+use App\Repositories\Models\CollectsModel;
 use App\Repositories\Models\ResGradesModel;
 use App\Repositories\Models\ResourcesModel;
 use App\Repositories\Models\UsersModel;
@@ -38,7 +39,10 @@ class DetailController extends Controller {
 
         ResourcesModel::where("id", $resourceId)->increment("views");
 
-        $comments = DB::table('comments')->select('comments.*', 'a.name as user_name', 'b.name as reply_name')->leftJoin('users AS a', 'a.id', '=', 'comments.user_id')->leftJoin('users AS b', 'b.id', '=', 'comments.reply')->where("comments.resource_id", $resourceId)->orderBy("likes", 'desc')->paginate(10);
+        $comments = DB::table('comments')->select('comments.*', 'a.name as user_name', 'b.name as reply_name')
+                      ->leftJoin('users AS a', 'a.id', '=', 'comments.user_id')
+                      ->leftJoin('users AS b', 'b.id', '=', 'comments.reply')
+                      ->where("comments.resource_id", $resourceId)->orderBy("likes", 'desc')->paginate(10);
         $userId   = $this->getUserId();
         foreach ($comments->toArray()['data'] as $key => $value) {
             if (strpos($value->likes_user_id, ",{$userId},") === false) {
@@ -51,10 +55,16 @@ class DetailController extends Controller {
             "user_id" => $userId,
             "resource_id" => $resourceId
         ))->pluck("grade")->first();
+
+        $collect = CollectsModel::where([
+            "user_id" => $userId,
+            'resource_id' => $resourceId
+        ])->first();
         return view("detail", [
             'detail' => $detail,
             'comments' => $comments,
             "myScore" => $myScore,
+            "collect"=>$collect
         ]);
     }
 
@@ -128,7 +138,8 @@ class DetailController extends Controller {
                 "grade" => $grade
             ));
         }
-        ResourcesModel::where("id", $resourceId)->update(['scored_numbers' => ResGradesModel::where("resource_id", $resourceId)->count()]);
+        ResourcesModel::where("id", $resourceId)
+                      ->update(['scored_numbers' => ResGradesModel::where("resource_id", $resourceId)->count()]);
 
         return response()->json($grade);
     }

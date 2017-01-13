@@ -2,10 +2,6 @@
 @section("content")
     <link rel="stylesheet" href="/css/thanksgiving.css">
 
-    <script type="text/javascript" src="{{ URL::asset('/js/lib/plupload/plupload.full.min.js') }}"></script>
-    <script type="text/javascript" src="{{ URL::asset('/js/thanksgiving.js') }}"></script>
-    <script src="http://cdn.bootcss.com/highcharts/5.0.0/highcharts.js"></script>
-
     <div class="modal fade " id="propModal" role="dialog" tabindex="-1" aria-labelledby="myModalLabel"
          aria-hidden="true" data-keyboard="true">
         <div class="modal-dialog">
@@ -119,7 +115,7 @@
                             <input type="text" class="form-control" id="link" name="link" placeholder="">
                         </div>
                     </div>
-                    @include("include.common.category")
+                    @include("parts.common.category")
                     <div class="panel panel-info form-group">
                         <div class="panel-heading">
                             <a id='giving-more' data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
@@ -178,7 +174,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                @include('include.common.switch', ["label"=>"付费",'status' => false,"open"=>"是","close"=>"否","name"=>"is_pay"])
+                                @include('parts.common.switch', ["label"=>"付费",'status' => false,"open"=>"是","close"=>"否","name"=>"is_pay"])
                                 <div class="form-group">
                                     <label for="introduce" class="col-sm-2 control-label">属性</label>
                                     <div class="col-sm-10">
@@ -221,6 +217,10 @@
         </div>
     </div>
     <textarea style="display: none;" id="prop_data">{{ json_encode(getCatePropRelationCache()) }}</textarea>
+
+    <script type="text/javascript" src="{{ URL::asset('/js/lib/plupload/plupload.full.min.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('/js/thanksgiving.js') }}"></script>
+    <script src="http://cdn.bootcss.com/highcharts/5.0.0/highcharts.js"></script>
 @stop
 @section("footer")
 @stop

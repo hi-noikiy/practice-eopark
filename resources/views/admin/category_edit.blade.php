@@ -3,7 +3,7 @@
 @stop
 @section("warp")
     <form class="form-horizontal" role="form" style="width: 50%;" action="/admin/category/editSave">
-        @include("include.common.category",[
+        @include("parts.common.category",[
             "categories"=>getCategoryCache(),
             "thisCategory"=>$thisCategory,
             "label"=>"上级分类",
@@ -22,7 +22,7 @@
                 <input type="text" class="form-control" name="priority" value="{{$data->priority}}">
             </div>
         </div>
-        @include("include.common.switch",["status"=>$data->status])
+        @include("parts.common.switch",["status"=>$data->status])
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <button type="submit" class="btn btn-default">提交</button>

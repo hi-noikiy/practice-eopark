@@ -1,8 +1,8 @@
 @extends("layouts.admin.master")
 @section("content")
-    @include("include.admin.resource_left")
+    @include("parts.admin.resource_left")
     <div class="right-warp">
-        @include("include.admin.resource_header",['add'=>true])
+        @include("parts.admin.resource_header",['add'=>true])
         <div class="panel panel-default edit-body">
             <div class="panel-body">
                 <form enctype="multipart/form-data" action="/admin/resource/add-save" method="post"
@@ -16,12 +16,12 @@
                         </div>
                     </div>
 
-                    @include('include.common.category',
+                    @include('parts.common.category',
                         ['categories' => $categories,
                         'label'=>"所属分类"
                         ])
 
-                    @include("include.admin.parts.brand_select",[
+                    @include("parts.admin.brand_select",[
                         "brandRelations"=>$brandRelations,
                     ])
                     {{--<div class="form-group">--}}
@@ -63,9 +63,9 @@
                         </div>
                     </div>
 
-                    @include('include.common.resource_type',['other'=>true])
-                    @include('include.common.switch', ['status' => false])
-                    @include('include.common.switch', ["label"=>"付费",'status' => false,"open"=>"是","close"=>"否","name"=>"is_pay"])
+                    @include('parts.common.resource_type',['other'=>true])
+                    @include('parts.common.switch', ['status' => false])
+                    @include('parts.common.switch', ["label"=>"付费",'status' => false,"open"=>"是","close"=>"否","name"=>"is_pay"])
 
                     <div class="form-group">
                         <label for="firstname" class="col-sm-2 control-label">cover</label>
@@ -88,14 +88,14 @@
                         </div>
                         <div id="collapseOne" class="panel-collapse collapse">
                             <div class="panel-body">
-                                @include("include.admin.parts.property_table",[
+                                @include("parts.admin.property_table",[
                                     "properties"=>$properties,
                                 ])
                             </div>
                         </div>
                     </div>
                     <br/>
-                    @include("include.admin.parts.form_submit_btn")
+                    @include("parts.admin.form_submit_btn")
 
                 </form>
             </div>

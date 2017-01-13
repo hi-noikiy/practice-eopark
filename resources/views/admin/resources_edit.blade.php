@@ -1,8 +1,8 @@
 @extends("layouts.admin.master")
 @section("content")
-    @include("include.admin.resource_left")
+    @include("parts.admin.resource_left")
     <div class="right-warp">
-        @include("include.admin.resource_header",["edit"=>true])
+        @include("parts.admin.resource_header",["edit"=>true])
         <div class="panel panel-default edit-body">
             <div class="panel-body">
                 <form enctype="multipart/form-data" class="form-horizontal" role="form"
@@ -19,7 +19,7 @@
                             <input type="text" class="form-control" name="link" value="{{ $resource->link or '' }}">
                         </div>
                     </div>
-                    @include('include.common.category',
+                    @include('parts.common.category',
                         ['categories' => $categories,
                         'thisCategory'=>[
                                 ["id"=>$resource->category_1],
@@ -28,7 +28,7 @@
                         ]])
 
 
-                    @include("include.admin.parts.brand_select",[
+                    @include("parts.admin.brand_select",[
                         "brandRelations"=>$brandRelations,
                         "brand_id"=>$resource->brand_id
                     ])
@@ -54,9 +54,9 @@
                                   rows="3">{{ $resource->introduce or '' }}</textarea>
                         </div>
                     </div>
-                    @include('include.common.resource_type',['type'=>$resource->type])
-                    @include('include.common.switch', ['status' => $resource->status])
-                    @include('include.common.switch', ["label"=>"付费",'status' =>  $resource->is_pay,"open"=>"是","close"=>"否","name"=>"is_pay"])
+                    @include('parts.common.resource_type',['type'=>$resource->type])
+                    @include('parts.common.switch', ['status' => $resource->status])
+                    @include('parts.common.switch', ["label"=>"付费",'status' =>  $resource->is_pay,"open"=>"是","close"=>"否","name"=>"is_pay"])
                     <div class="form-group">
                         <label for="firstname" class="col-sm-2 control-label">上传封面</label>
                         <div class="col-sm-8">
@@ -82,7 +82,7 @@
                         </div>
                         <div id="collapseOne" class="panel-collapse collapse">
                             <div class="panel-body">
-                                @include("include.admin.parts.property_table",[
+                                @include("parts.admin.property_table",[
                                     "properties"=>$properties,
                                     'ownProperty'=>$ownProperty
                                 ])
@@ -90,7 +90,7 @@
                         </div>
                     </div>
 
-                    @include("include.admin.parts.form_submit_btn")
+                    @include("parts.admin.form_submit_btn")
                 </form>
             </div>
         </div>

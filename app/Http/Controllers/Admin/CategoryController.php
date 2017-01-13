@@ -64,14 +64,14 @@ class CategoryController extends Controller {
     }
 
 
-    public function delete($id, CategoriesRepository $categoriesRep) {
+    public function delete($id,  $categoriesRep) {
         $result = $categoriesRep->delete($id);
         setReturnMessage($result);
         return redirect('/admin/category');
     }
 
-    public function add($parentId, CategoriesModel $categoriesModel) {
-        return view("admin.category_add", ["thisCategory" => $categoriesModel->getCategoryChain($parentId)]);
+    public function add($parentId) {
+        return view("admin.category_add", ["thisCategory" => CategoriesModel::getChainById($parentId)]);
     }
 
     public function addSave(Request $request) {

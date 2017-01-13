@@ -13,7 +13,7 @@ class CollectsRep {
             'resources.title'
         ];
         return CollectsModel::select($select)->leftJoin("resources", "resources.id", '=', 'collects.resource_id')
-                            ->where("user_id", $userId)->orderBy('created_at', 'desc')->get();
+                            ->where("user_id", $userId)->orderBy('created_at', 'desc')->paginate(15);
 
     }
 }

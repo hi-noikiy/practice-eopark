@@ -1,8 +1,8 @@
 @extends("layouts.admin.master")
 @section("content")
-    @include("include.admin.resource_left")
+    @include("parts.admin.resource_left")
     <div class="right-warp">
-        @include("include.admin.brand_header")
+        @include("parts.admin.brand_header")
         @section("warp")
         @show
     </div>

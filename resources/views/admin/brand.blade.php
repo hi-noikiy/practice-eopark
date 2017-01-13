@@ -22,7 +22,7 @@
                 <td><img src="{{$brand->brand_logo}}" class="logo"></td>
 {{--                <td>{{$brand->name ? $brand->name : ''}}</td>--}}
                 <td>{{$brand->priority}}</td>
-                @include("include.admin.parts.status",["status"=>$brand->status])
+                @include("parts.admin.status",["status"=>$brand->status])
                 <td><a href="/admin/brand/edit/{{$brand->id}}">编辑</a> | <a href="/admin/brand/showCategories/{{$brand->id}}">所属分类</a><a href="/admin/brand/delete/{{$brand->id}}"
                                                                            class="delete"
                                                                            onclick="return confirm('确认删除吗?')">删除</a>

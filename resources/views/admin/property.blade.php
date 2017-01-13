@@ -17,7 +17,7 @@
                 <td><span class="glyphicon glyphicon-chevron-up"
                           data-id="{{$property->id}}"> </span> {{$property->name}}</td>
                 <td>{{$property->priority}}</td>
-                @include("include.admin.parts.status",['status'=>$property->status])
+                @include("parts.admin.status",['status'=>$property->status])
                 <td>
                     <a href="{{ url()->current() }}/edit/{{ $property->id }}">编辑</a> | <a
                             href="{{url()->current()}}/addValue/{{$property->id}}">新增下级</a> | <a
@@ -30,7 +30,7 @@
                     <th><input type="checkbox"/></th>
                     <td class="depth2">{{$value->name}}</td>
                     <td>{{$value->priority}}</td>
-                    @include("include.admin.parts.status",['status'=>$value->status])
+                    @include("parts.admin.status",['status'=>$value->status])
                     <td>
                         <a href="{{ url()->current() }}/editValue/{{ $value->id }}">编辑</a> | <a
                                 href="{{url()->current()}}/deletePropValue/{{$value->id}}"

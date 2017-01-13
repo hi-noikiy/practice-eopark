@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section("content")
     <link rel="stylesheet" href="/css/category.css">
-    <script src="/js/category.js"></script>
 
     <div class="panel panel-body category">
         <div class="sub-container">
@@ -109,5 +108,7 @@
             </div>
         </div>
     </div>
+
+    <script src="/js/category.js"></script>
 @stop
 

@@ -19,6 +19,10 @@ class CollectsModel extends Model {
     }
 
     public static function add($data) {
-        return CollectsModel::create($data);
+        $result = CollectsModel::where($data)->first();
+        if (!$result) {
+            return CollectsModel::create($data);
+        }
+        return $result;
     }
 }

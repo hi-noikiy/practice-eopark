@@ -1,6 +1,6 @@
 @extends("layouts.admin.master")
 @section("content")
-    @include("include.admin.resource_left")
+    @include("parts.admin.resource_left")
     <div class="right-warp">
         <div class="panel panel-default">
             <div class="panel-body">

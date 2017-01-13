@@ -1,9 +1,9 @@
 @extends("layouts.admin.master")
 @section("content")
-    @include("include.admin.resource_left")
+    @include("parts.admin.resource_left")
 
     <div class="right-warp">
-        @include("include.admin.resource_header",['all'=>true])
+        @include("parts.admin.resource_header",['all'=>true])
         {{--<div class="panel panel-default">--}}
         {{--<div class="panel-body">--}}
         {{--<form class="form-inline" role="form">--}}
@@ -95,7 +95,6 @@
                 </tr>
             @endforeach
             </tbody>
-
         </table>
         <div class="page_bottom">
             <?php echo $resources->render(); ?>

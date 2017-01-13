@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section("content")
     <link rel="stylesheet" href="/css/detail.css">
-    <script type="text/javascript" src="{{ URL::asset('/js/detail.js') }}"></script>
 
     <input type="hidden" id="_token" class="_token" value="{{csrf_token()}}">
     <div class="detail-subject">
@@ -27,11 +26,10 @@
                     <a href="/resources/{{ isset($detail->category_3_name->id)?$detail->category_3_name->id  :''}}">{{ isset($detail->category_3_name->name) ? $detail->category_3_name->name:''  }}</a>
                 </dd>
                 <dd>品牌:{{ $detail->brand_name ?  $detail->brand_name : '无' }}</dd>
-                <dd>贡献:{{ $detail->user_name ? $detail->user_name : "eopark.com" }}</dd>
+                <dd>贡献:{{ $detail->user_name ? $detail->user_name : config("set.sitePath") }}</dd>
                 <dd>付费:{{ $detail->is_pay ? "是" : "否" }}</dd>
                 <dd>浏览:{{ numberAdapter($detail->views) }}</dd>
                 <dd>收录:{{ $detail->created_at }}</dd>
-                <dd>更新:{{ $detail->updated_at }}</dd>
             </dl>
             <div class="grade">
                 <p id="grade">{{ empty($detail->score) ? $detail->score : "\\" }}</p>
@@ -48,10 +46,19 @@
                     <span></span>
                     <p></p>
                 </div>
-                <p><a href="#" class="tooltip-toggle" data-toggle="tooltip" data-placement="bottom" title="收藏资源"
-                      data-trigger="click" id="collect" data-res-id="{{$detail->id}}">
-                        <button class="btn btn-default btn-sm">收藏</button>
-                    </a></p>
+                <p>
+                    @if(!is_null($collect))
+                        <a class="btn btn-success btn-sm"
+                           data-is-collect="true"
+                           id="collect" data-res-id="{{$detail->id}}"
+                           data-collect-id="{{$collect->id}}">已收藏</a>
+                    @else
+                        <a class="btn btn-default btn-sm"
+                           data-is-collect="false"
+                           id="collect" data-res-id="{{$detail->id}}"
+                           data-collect-id="0">收藏</a>
+                    @endif
+                </p>
             </div>
             @if($detail->introduce)
                 <div class="detail-introduce">
@@ -114,11 +121,7 @@
                     @endforeach
                 </ul>
             </div>
-            @if(count($comments))
-                <div class="page_bottom">
-                    <?php echo $comments->render(); ?>
-                </div>
-            @endif()
+            @include("parts.common.page_number",["data"=>$comments,"text"=>""])
 
         </div>
         <div class="detail-container-right">
@@ -134,4 +137,5 @@
             {{--</ul>--}}
         </div>
     </div>
+    <script type="text/javascript" src="{{ URL::asset('/js/detail.js') }}"></script>
 @stop

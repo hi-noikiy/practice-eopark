@@ -15,14 +15,14 @@
                             <input type="text" class="form-control" name="name">
                         </div>
                     </div>
-                    @include('include.common.category',['categories' => getCategoryCache(),'label'=>'上级分类'])
+                    @include('parts.common.category',['categories' => getCategoryCache(),'label'=>'上级分类'])
                     <div class="form-group">
                         <label for="firstname" class="col-sm-2 control-label">排序</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" name="priority">
                         </div>
                     </div>
-                    @include("include.common.switch",["status"=>1])
+                    @include("parts.common.switch",["status"=>1])
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                             <button type="submit" class="btn btn-primary">提交</button>

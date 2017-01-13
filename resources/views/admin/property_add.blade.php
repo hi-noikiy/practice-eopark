@@ -13,7 +13,7 @@
                 <input type="text" class="form-control" name="priority">
             </div>
         </div>
-        @include("include.common.switch",["status"=>true])
-        @include("include.admin.parts.form_submit_btn")
+        @include("parts.common.switch",["status"=>true])
+        @include("parts.admin.form_submit_btn")
     </form>
 @stop

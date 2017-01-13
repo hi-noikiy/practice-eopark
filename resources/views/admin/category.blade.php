@@ -13,7 +13,7 @@
             </thead>
             <tbody>
             @foreach($categories as $category1)
-                @include("include.admin.parts.category_tr",[
+                @include("parts.admin.category_tr",[
                 "id"=>$category1["id"],
                 "parent_id"=>$category1["parent_id"],
                 "name"=>$category1["name"],
@@ -24,7 +24,7 @@
                 ])
                 @if(count($category1["next"]))
                     @foreach($category1["next"] as $category2)
-                        @include("include.admin.parts.category_tr",[
+                        @include("parts.admin.category_tr",[
                         "id"=>$category2["id"],
                         "parent_id"=>$category2["parent_id"],
                         "name"=>$category2["name"],
@@ -36,7 +36,7 @@
                         ])
                         @if(count($category2["next"]))
                             @foreach($category2["next"] as $category3)
-                                @include("include.admin.parts.category_tr",[
+                                @include("parts.admin.category_tr",[
                                 "id"=>$category3["id"],
                                 "parent_id"=>$category3["parent_id"],
                                 "name"=>$category3["name"],
