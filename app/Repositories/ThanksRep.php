@@ -3,7 +3,7 @@ namespace App\Repositories;
 
 use App\Repositories\Models\ThanksModel;
 
-class ThanksRepository {
+class ThanksRep {
 //    public function addThanks($useId, $data) {
 //        return ThanksModel::create(array(
 //            "user_id" => $useId,

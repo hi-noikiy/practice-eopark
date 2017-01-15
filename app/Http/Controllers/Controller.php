@@ -18,7 +18,7 @@ class Controller extends BaseController {
             return Auth::id();
         } else {
             if ($isMust) {
-                header('Location:' . Config::get('set.setRoot') . '/login');
+                header('Location:/login');
                 exit;
             } else {
                 return 0;

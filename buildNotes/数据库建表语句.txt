@@ -98,7 +98,14 @@ create table eo_collects(
     updated_at datetime
 )
 
-
+create table eo_letters(
+    id int auto_increment primary key,
+    from_user_id int not null,
+    to_user_id int not null,
+    content  varchar(1024) default "",
+    created_at datetime,
+    updated_at datetime
+)
 
 
 

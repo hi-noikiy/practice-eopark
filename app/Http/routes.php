@@ -49,6 +49,7 @@ Route::group([
     Route::get('/my/collect/delete/{collectId}', 'MyCollectController@delete');
 
     Route::get('/my/letter', 'MyLetterController@index');
+    Route::get('/my/letter/view/{fromUserId}', 'MyLetterController@viewByFrom');
 });
 
 Route::group([

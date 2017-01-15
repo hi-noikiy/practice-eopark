@@ -33,21 +33,29 @@
     }
 
     @if($type=="letter")
-         .letter-left {
-        width: 15%;
-        position: absolute;
-        left: 0;
-        top: 120px;
-        padding: 0 10px;
-        }
-        .letter-item-content{
-            padding-left: 2em;
-        }
-        .letter-item-from{
-            font-weight: 600;
-            padding-right: 1em;
-        }
-    .list-group-item:hover >p .delete {
+        .letter-item-content {
+        max-width: 80%;
+        padding-left: 1.5em;
+        display: inline-block;
+        max-height: 3em;
+        overflow: hidden;
+    }
+
+    .letter-item-content-point {
+        font-weight: 800;
+        padding: 0 5px;
+    }
+
+    .list-group-item-success {
+        margin-bottom: 5px;
+    }
+
+    .letter-item-from {
+        font-weight: 600;
+        padding-right: 1em;
+    }
+
+    .list-group-item:hover > p .delete {
         display: inline-block;
     }
     @endif
@@ -63,6 +71,10 @@
                 type: 'get',
                 success: function () {
                     item.hide();
+                    @if($type=="letter")
+                        console.log(111);
+
+                    @endif
                 }
             });
             event.preventDefault();

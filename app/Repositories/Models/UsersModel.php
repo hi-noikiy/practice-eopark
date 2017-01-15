@@ -13,8 +13,10 @@ class UsersModel extends Model implements AuthenticatableContract, AuthorizableC
     use Authenticatable, Authorizable, CanResetPassword;
     protected $table    = 'users';
     protected $fillable = [
-        'name',
-        'password',
-        'email',
+        'name', 'password', 'email',
     ];
+
+    public static function getDataById($Id, $select = ['id', 'name', 'email']) {
+        return UsersModel::select($select)->where('id', $Id)->get();
+    }
 }
