@@ -14,7 +14,7 @@
 
     .list-group .delete {
         float: right;
-        display: none;
+        visibility: hidden;
         margin-right: 1em;
     }
 
@@ -24,7 +24,8 @@
     }
 
     .list-group-item:hover > .delete {
-        display: inline-block;
+        /*display: inline-block;*/
+        visibility: visible;
     }
 
     .delete:hover {
@@ -32,7 +33,15 @@
         cursor: pointer;
     }
 
-    @if($type=="letter")
+    .letter-left {
+        width: 15%;
+        position: absolute;
+        left: 0;
+        top: 120px;
+        padding: 0 10px;
+    }
+
+    @if(isset($type) && $type=="letter")
         .letter-item-content {
         max-width: 80%;
         padding-left: 1.5em;
@@ -53,10 +62,11 @@
     .letter-item-from {
         font-weight: 600;
         padding-right: 1em;
+        /*display: inline-block;*/
     }
 
     .list-group-item:hover > p .delete {
-        display: inline-block;
+        visibility: visible;
     }
     @endif
 </style>
@@ -71,10 +81,6 @@
                 type: 'get',
                 success: function () {
                     item.hide();
-                    @if($type=="letter")
-                        console.log(111);
-
-                    @endif
                 }
             });
             event.preventDefault();

@@ -17,6 +17,6 @@ class UsersModel extends Model implements AuthenticatableContract, AuthorizableC
     ];
 
     public static function getDataById($Id, $select = ['id', 'name', 'email']) {
-        return UsersModel::select($select)->where('id', $Id)->get();
+        return UsersModel::select($select)->where('id', $Id)->first();
     }
 }

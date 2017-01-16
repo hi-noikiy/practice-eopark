@@ -49,7 +49,10 @@ Route::group([
     Route::get('/my/collect/delete/{collectId}', 'MyCollectController@delete');
 
     Route::get('/my/letter', 'MyLetterController@index');
+    Route::get('/my/letter/new', 'MyLetterController@index');
     Route::get('/my/letter/view/{fromUserId}', 'MyLetterController@viewByFrom');
+    Route::get('/my/letter/all', 'MyLetterController@all');
+    Route::post('/my/letter/send/{toUserId}', 'MyLetterController@send');
 });
 
 Route::group([

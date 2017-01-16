@@ -12,7 +12,9 @@ use Illuminate\Database\Eloquent\Model;
 class LettersModel extends Model {
     protected $table    = 'letters';
     protected $fillable = [
-        'from_user_id', 'to_user_id', 'content',
+        'from_user_id',
+        'to_user_id',
+        'content',
     ];
 
     public static function setViewed($where) {
@@ -20,6 +22,13 @@ class LettersModel extends Model {
             return NULL;
         }
         return LettersModel::where($where)->update(['is_viewed' => 1]);
+    }
+
+    public static function add($data) {
+        if (!is_array($data)) {
+            return NULL;
+        }
+        return LettersModel::create($data);
     }
 
 

@@ -1,16 +1,9 @@
 <div class="list-group letter-left">
-    <a href="#" class="list-group-item ">
-        未读
-        <span class="badge">12</span>
+    <a href="/my/letter/new"
+       class="list-group-item {{$leftSelected=="NEW" ? "active":""}}">未读
+        @if(isset($newNumber ) && $newNumber)
+            <span class="badge">{{$newNumber}}人</span>
+        @endif
     </a>
-    <a href="#" class="list-group-item active">全部</a>
+    <a href="/my/letter/all" class="list-group-item {{$leftSelected=="ALL" ? "active":""}}">全部</a>
 </div>
-<style type="text/css">
-    .letter-left {
-        width: 15%;
-        position: absolute;
-        left: 0;
-        top: 120px;
-        padding: 0 10px;
-    }
-</style>

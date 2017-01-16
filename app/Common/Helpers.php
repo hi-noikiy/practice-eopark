@@ -1,6 +1,5 @@
 <?php
 //获取资源类型名
-
 function getResourceType($typeId) {
     switch ($typeId) {
         case 0:
@@ -67,7 +66,7 @@ function getCategoryAllCache() {
 }
 
 
-function getCatePropRelationCache(){
+function getCatePropRelationCache() {
     return unserialize(file_get_contents(config("path.category_properties")));
 }
 
@@ -227,9 +226,25 @@ function clearBrother($brothers) {
             $remix = $remix ? $remix . "-" . $filter : $filter;
         }
     }
-    return str_replace($end,$remix,$current);
+    return str_replace($end, $remix, $current);
 }
 
-function getBrandCateRelations(){
 
+function dateAdapter($date) {
+    $thisTime       = strtotime($date);
+    $timeDifference = time() - $thisTime;
+    if ($timeDifference < 86400) {
+        $result = "";
+    } else {
+        if ($timeDifference < 172800) {
+            $result = "昨天 ";
+        } else {
+            if ($timeDifference < 259200) {
+                $result = "前天 ";
+            }else{
+                $result = date("Y-m-d ", $thisTime);
+            }
+        }
+    }
+    return $result . date("H:i", $thisTime);
 }
