@@ -32,11 +32,20 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                aria-expanded="false">
+                                @if( session('unreadLetterNum'))
+                                    <span class="badge">{{session('unreadLetterNum')}}</span>
+                                @endif
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu" role="menu">
-                                {{--<li><a href="{{ url('/my/collect') }}"><i class="glyphicon glyphicon-folder-open"> </i>--}}
-                                        {{--我的收藏</a></li>--}}
+                                <li><a href="{{ url('/my/letter') }}"><i class="glyphicon glyphicon-envelope"> </i>
+                                        我的信件
+                                        @if( session('unreadLetterNum') && session('unreadLetterNum') !=0)
+                                            <span class="badge">{{session('unreadLetterNum')}}</span>
+                                        @endif
+                                    </a></li>
+                                <li><a href="{{ url('/my/collect') }}"><i class="glyphicon glyphicon-folder-open"> </i>
+                                        我的收藏</a></li>
                                 <li><a href="{{ url('/logout') }}" style="color: red;"><i
                                                 class="glyphicon glyphicon-log-out"> </i> 退出登录</a></li>
                             </ul>

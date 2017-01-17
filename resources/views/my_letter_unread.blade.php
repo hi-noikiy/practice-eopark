@@ -2,7 +2,7 @@
 @section("content")
     <div class="letter">
         @include("parts.letter_left",[
-            'leftSelected'=>"NEW",
+            'leftSelected'=>"unread",
             'newNumber'=>count($letters)
         ])
         <div class="panel panel-default">
@@ -11,7 +11,7 @@
                 <div class="list-group">
                     @foreach($letters as $letter)
                         <a class="list-group-item list-group-item-success"
-                           href="/my/letter/view/{{$letter['from_user_id']}}"><span
+                           href="/my/letter/reading/{{$letter['from_user_id']}}"><span
                                     class="letter-item-from">{{$letter['from_user_name']}}</span>
                             @foreach($letter['content'] as $content)
                                 <p>
@@ -29,6 +29,9 @@
                     @endforeach
                 </div>
             </div>
+            @if(count($letters) == 0)
+                <h3 class="center">无内容</h3>
+            @endif
         </div>
     </div>
     @include("parts.my_css_js",["type"=>"letter"])

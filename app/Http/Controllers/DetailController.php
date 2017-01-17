@@ -64,7 +64,7 @@ class DetailController extends Controller {
             'detail' => $detail,
             'comments' => $comments,
             "myScore" => $myScore,
-            "collect"=>$collect
+            "collect" => $collect
         ]);
     }
 
@@ -81,9 +81,11 @@ class DetailController extends Controller {
             $userName        = substr($comment, 1, $commentStartPos - 1);
             $replyUserId     = UsersModel::where("name", $userName)->pluck("id")->first();
             if ($replyUserId) {
-                $comment = substr($comment, $commentStartPos + 1, strlen($comment));
-                //进通知中心,通知被回复id;
-                //未完成
+
+                $comment          = substr($comment, $commentStartPos + 1, strlen($comment));
+                //通知被回复id;
+                $LetterController = new MyLetterController();
+                $LetterController->send($replyUserId, $comment);
             }
         }
         $commentResult = response()->json(CommentsModel::create([

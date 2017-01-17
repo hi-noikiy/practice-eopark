@@ -19,26 +19,31 @@ class MyLetterController extends Controller {
      * 信箱首页,显示未读消息
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index() {
-        return view("my_letter", ["letters" => LettersRep::getNotViewByTo(self::$userId)]);
+    public function unread() {
+        return view("my_letter_unread", ["letters" => LettersRep::getNotViewByTo(self::$userId)]);
     }
 
     public function all() {
-        $newLetters = LettersModel::select("id")->where([
-            'to_user_id' => self::$userId,
-            'is_viewed' => 0
-        ])->groupBy("from_user_id")->get();
-
         return view('my_letter_all', [
             'letters' => LettersRep::getAll(self::$userId),
-            'newNumber' => count($newLetters),
+            'newNumber' => count(LettersModel::select("id")->where([
+                'to_user_id' => self::$userId,
+                'is_viewed' => 0
+            ])->groupBy("from_user_id")->get()),
         ]);
     }
 
-    public function viewByFrom($fromUserId) {
-        //只查询了新消息,如果有历史消息应该显示
-        $letters = LettersRep::getDataByFromIdToId($fromUserId, self::$userId);
-        return view('my_letter_view', [
+    public function reading($fromUserId, $letterId = 0) {
+        //bug 只查询了新消息,如果有历史消息应该显示
+        $letters   = LettersRep::getDataByFromIdToId($fromUserId, self::$userId, $letterId);
+        $unreadNum = LettersRep::getUnreadNum(self::$userId);
+        if ($unreadNum) {
+            session()->flash('unreadLetterNum', $unreadNum);
+        } else {
+            session()->forget('unreadLetterNum');
+        }
+
+        return view('my_letter_reading', [
             'letters' => $this->dateHandler($letters),
             'from_user_id' => $fromUserId,
             'userData' => UsersModel::select('name')->where("id", self::$userId)->first(),
@@ -46,11 +51,11 @@ class MyLetterController extends Controller {
     }
 
 
-    public function send($toUserId) {
+    public function send($toUserId, $content = false) {
         return LettersModel::add([
             'from_user_id' => self::$userId,
             'to_user_id' => $toUserId,
-            'content' => Input::get("content"),
+            'content' => $content === false ? Input::get("content") : $content,
         ]);
     }
 

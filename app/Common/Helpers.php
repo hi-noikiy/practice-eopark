@@ -231,20 +231,23 @@ function clearBrother($brothers) {
 
 
 function dateAdapter($date) {
-    $thisTime       = strtotime($date);
-    $timeDifference = time() - $thisTime;
-    if ($timeDifference < 86400) {
-        $result = "";
+    $thisTime = date('Y-m-d', strtotime($date));
+    $today    = date("Y-m-d");
+    $last1Day = date("Y-m-d", strtotime("-1 day"));
+    $last2Day = date("Y-m-d", strtotime("-2 day"));
+
+    if ($thisTime == $today) {
+        $result = "今天 ";
     } else {
-        if ($timeDifference < 172800) {
+        if ($thisTime == $last1Day) {
             $result = "昨天 ";
         } else {
-            if ($timeDifference < 259200) {
+            if ($thisTime == $last2Day) {
                 $result = "前天 ";
-            }else{
-                $result = date("Y-m-d ", $thisTime);
+            } else {
+                $result = date("Y-m-d ", strtotime($date));
             }
         }
     }
-    return $result . date("H:i", $thisTime);
+    return $result . date("H:i", strtotime($date));
 }

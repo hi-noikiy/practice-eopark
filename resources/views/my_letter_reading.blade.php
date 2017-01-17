@@ -15,7 +15,7 @@
                         @if($letter['from_user_id'] == $from_user_id)
                             <li class="list-group-item ">
                                 <div class="item-head head-left">
-                                    <img class="head-img img-circle" src="/img/resource/20161218171218_53.jpg">
+                                    {{--<img class="head-img img-circle" src="/img/resource/20161218171218_53.jpg">--}}
                                     <p class="text-center">{{ $letter['from_name'] }}</p>
                                 </div>
                                 <p class="item-content item-left">
@@ -25,7 +25,7 @@
                         @else
                             <li class="list-group-item">
                                 <div class="item-head head-right">
-                                    <img class="head-img img-circle my-head" src="/img/resource/20161218171218_53.jpg">
+                                    {{--<img class="head-img img-circle my-head" src="/img/resource/20161218171218_53.jpg">--}}
                                     <p class="text-center my-name">{{ $letter['from_name'] }}</p>
                                 </div>
                                 <p class=" item-content item-right">

@@ -2,7 +2,7 @@
 @section("content")
     <div class="letter">
         @include("parts.letter_left",[
-            'leftSelected'=>"ALL",
+            'leftSelected'=>"all",
             'newNumber'=>$newNumber
         ])
         <div class="panel panel-default">
@@ -11,7 +11,7 @@
                 <div class="list-group">
                     @foreach($letters as $letter)
                         <a class="list-group-item {{$letter->is_viewed ? '': 'list-group-item-success'}}"
-                           href="/my/letter/view/{{$letter->from_user_id}}">
+                           href="/my/letter/reading/{{$letter->from_user_id}}/{{$letter->id}}">
                             <span class="letter-item-from">{{$letter->name}}</span>
                             <span class="letter-item-content">{{$letter->content}}</span>
                             <span title="删除" class="delete glyphicon glyphicon-trash"
@@ -21,6 +21,7 @@
                     @endforeach
                 </div>
             </div>
+            @include("parts.common.page_number",["data"=>$letters])
         </div>
     </div>
     @include('parts.my_css_js',["type"=>"letter"])

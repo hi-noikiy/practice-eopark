@@ -48,11 +48,21 @@ Route::group([
     Route::get('/my/collect/add/{resourceId}', 'MyCollectController@add');
     Route::get('/my/collect/delete/{collectId}', 'MyCollectController@delete');
 
-    Route::get('/my/letter', 'MyLetterController@index');
-    Route::get('/my/letter/new', 'MyLetterController@index');
-    Route::get('/my/letter/view/{fromUserId}', 'MyLetterController@viewByFrom');
+    Route::get('/my/letter', function () {
+        if (session('unreadLetterNum') != 0) {
+            return redirect()->action('MyLetterController@unread');
+        }
+        return redirect()->action('MyLetterController@all');
+    });
+
+    Route::get('/my/letter/unread', 'MyLetterController@unread');
+    Route::get('/my/letter/reading/{fromUserId}/{letterId?}', 'MyLetterController@reading');
     Route::get('/my/letter/all', 'MyLetterController@all');
     Route::post('/my/letter/send/{toUserId}', 'MyLetterController@send');
+
+    /*official*/
+    Route::get('/official/touch', 'OfficialController@touch');
+
 });
 
 Route::group([
