@@ -2,12 +2,9 @@
 @section("content")
     <div class="panel panel-default" style="width:35%;padding:10px;">
         <div class="panel-body">
-            <ul class="nav nav-pills">
-                <li><a href="/admin/member">所有</a></li>
-                <li class="active"><a href="#">添加</a></li>
-            </ul>
+            @include("parts.admin.user_head")
             <br/>
-            <form role="form" action="/admin/member/add" method="post">
+            <form role="form" action="/admin/user/add" method="post">
                 <div class="form-group ">
                     <label for = "name">昵称:</label>
                     <input type="text" class="form-control " id="name" placeholder="请输入昵称" >

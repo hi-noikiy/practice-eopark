@@ -2,24 +2,21 @@
 @section("content")
     <div class="panel panel-default">
         <div class="panel-body">
-            <ul class="nav nav-pills">
-                <li class="active"><a href="/admin/member">所有</a></li>
-                <li class="" data-toggle="modal" data-target="#myModal"><a>添加</a></li>
-            </ul>
+            @include("parts.admin.user_head")
             <br/>
             <div class="modal-body">
-                <form class="form-horizontal" role="form" method="get" action="/admin/member/editSave/{{$members->id}}">
+                <form class="form-horizontal" role="form" method="get" action="{{url()->current()}}/save">
                     <div class="form-group">
                         <label for="firstname" class="col-sm-2 control-label">昵称</label>
                         <div class="col-sm-10">
-                            <input type="hidden" name="id" value="{{$members->id}}}"/>
-                            <input type="text" class="form-control" name="name" value="{{$members->name}}">
+                            <input type="hidden" name="id" value="{{$user->id}}}"/>
+                            <input type="text" class="form-control" name="name" value="{{$user->name}}">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="firstname" class="col-sm-2 control-label">邮箱</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="email" value="{{$members->email}}">
+                            <input type="text" class="form-control" name="email" value="{{$user->email}}">
                         </div>
                     </div>
 

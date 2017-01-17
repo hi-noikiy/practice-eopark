@@ -3,7 +3,7 @@ namespace App\Repositories;
 
 use App\Repositories\Models\UsersModel;
 
-class UsersRepository {
+class UsersRep {
 
 //    public function add($data) {
 //        return UsersModel::create([
@@ -12,7 +12,7 @@ class UsersRepository {
 //            "email" => $data["userName"],
 //        ]);
 //    }
-    public function getAll($name) {
+    public static function getAll($name) {
         if($name){
             $members = UsersModel::where("name",$name)->orderBy('id', 'desc')->paginate(15);
         }else{
@@ -21,13 +21,9 @@ class UsersRepository {
         return $members;
     }
 //
-//    public function deleteById($id) {
-//        UsersModel::where("id", $id)->delete();
-//    }
+
 //    public function getOne($id) {
 //        return UsersModel::where("id", $id)->first();
 //    }
-//    public function edit($id, $data) {
-//        UsersModel::where("id", $id)->update($data);
-//    }
+
 }

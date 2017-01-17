@@ -176,7 +176,7 @@ var loadData = function () {
                                 '<p class="video-introduce-text">' + resource.introduce + '</p>' +
                                 '<p><i class="glyphicon glyphicon-eye-open ">' + resource.views + '</i>' +
                                 '<i class="glyphicon glyphicon-star other">' + score + '</i>' +
-                                '<i class="glyphicon glyphicon-comment other">'+resource.comment_numbers+'</i>' +
+                                '<i class="glyphicon glyphicon-comment other">' + resource.comment_numbers + '</i>' +
                                 '<i class="glyphicon glyphicon-time other">' + resource.updated_at.substring(0, 10) + '</i>' +
                                 '</p></div></a></li>';
                         }
@@ -184,7 +184,7 @@ var loadData = function () {
 
                         ulStr += addViewMoreBtn(resources.length);
                     } else {
-                        ulStr += '<li><p class="not-found-resource">暂无资源</p></li>';
+                        ulStr += '<li><p class="not-found-resource">无内容</p></li>';
                     }
                     ulStr += '</ul>';
                     videoContainer.append(ulStr);
@@ -199,16 +199,17 @@ var loadData = function () {
                             score = resource.score != 0 ? resource.score : "\\";
                             ulStr += '<li>' +
                                 '<a href="/detail/' + resource.id + '">' +
-                                '<h4>' + resource.title + '</h4>' +
+                                '<h4><span><img class="text-img" src="' + resource.cover + '" onerror="this.src=\'/img/onError.jpg\'"/>' + resource.title + '</h4>' +
+                                ' <p class="video-introduce-text">' + resource.introduce + '</p>' +
                                 '<p><i class="glyphicon glyphicon-eye-open">' + resource.views + '</i>' +
                                 '<i class="glyphicon glyphicon-star other">' + score + '</i>' +
-                                '<i class="glyphicon glyphicon-comment other">'+resource.comment_numbers+'</i>' +
+                                '<i class="glyphicon glyphicon-comment other">' + resource.comment_numbers + '</i>' +
                                 '<i class="glyphicon glyphicon-time other">' + resource.updated_at.substring(0, 10) + '</i>' +
                                 '</p></a></li>';
                         }
                         ulStr += addViewMoreBtn(resources.length);
                     } else {
-                        ulStr += '<li><p class="not-found-resource">暂无资源</p></li>';
+                        ulStr += '<li><p class="not-found-resource">无内容</p></li>';
                     }
                     ulStr += '</ul>';
                     textContainer.append(ulStr);
@@ -226,15 +227,16 @@ var loadData = function () {
                                 '<a href="/detail/' + resource.id + '">' +
                                 '<h4><span><img src="' + resource.cover + '" onerror="this.src=\'' + imgOnError + '\'">' +
                                 '</span>' + resource.title + '</h4><p>' +
-                                '<i class="glyphicon glyphicon-eye-open">' + resource.views + '</i>' +
+                                '<p class="video-introduce-text">' + resource.introduce + '</p>' +
+                                '<p><i class="glyphicon glyphicon-eye-open">' + resource.views + '</i>' +
                                 '<i class="glyphicon glyphicon-star other">' + score + '</i>' +
-                                '<i class="glyphicon glyphicon-comment other">'+resource.comment_numbers+'</i>' +
+                                '<i class="glyphicon glyphicon-comment other">' + resource.comment_numbers + '</i>' +
                                 '<i class="glyphicon glyphicon-time other">' + resource.updated_at.substring(0, 10) + '</i>' +
                                 '</p></a></li>';
                         }
                         ulStr += addViewMoreBtn(resources.length);
                     } else {
-                        ulStr += '<li><p class="not-found-resource">暂无资源</p></li>';
+                        ulStr += '<li><p class="not-found-resource">无内容</p></li>';
                     }
                     ulStr += '</ul>';
                     downloadContainer.append(ulStr);

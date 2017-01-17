@@ -20,10 +20,22 @@
                     </dd>
                 @endif
                 <dd>类型:{{ getResourceType($detail->type) }}</dd>
-                <dd>分类:<a href="/resources/{{ $detail->category_1_name->id }}">{{ $detail->category_1_name->name }}</a>
-                    {{ isset($detail->category_2_name->id) ? '/' :'' }} <a
-                            href="/resources/{{ $detail->category_2_name->id }}">{{ $detail->category_2_name->name }}</a> {{ isset($detail->category_3_name->id) ? '/' :'' }}
-                    <a href="/resources/{{ isset($detail->category_3_name->id)?$detail->category_3_name->id  :''}}">{{ isset($detail->category_3_name->name) ? $detail->category_3_name->name:''  }}</a>
+                <dd>分类:<a href="/resources/{{ $detail->category_1_name->id }}">
+                        {{ $detail->category_1_name->name }}
+                    </a>
+                    @if(isset($detail->category_2_name->id))
+                        /
+                        <a href="/resources/{{ $detail->category_2_name->id }}">
+                            {{ $detail->category_2_name->name }}
+                        </a>
+                        @if(isset($detail->category_3_name->id))
+                            /
+                            <a href="/resources/{{ $detail->category_3_name->id}}">
+                                {{  $detail->category_3_name->name }}
+                            </a>
+                        @endif
+                    @endif
+
                 </dd>
                 <dd>品牌:{{ $detail->brand_name ?  $detail->brand_name : '无' }}</dd>
                 <dd>贡献:{{ $detail->user_name ? $detail->user_name : config("set.sitePath") }}</dd>

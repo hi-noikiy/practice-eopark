@@ -76,8 +76,8 @@
                     @foreach($resources_hot[2] as $text)
                         <li>
                             <a href="/detail/{{ $text->id }}">
-                                <h4>{{ $text->title }}</h4>
-                                <p class="video-introduce-text">{{$video->introduce}}</p>
+                                <h4><span><img class="text-img" src="{{$text->cover}}" onerror="this.src='/img/onError.jpg'"/></span>{{ $text->title }}</h4>
+                                <p class="video-introduce-text">{{$text->introduce}}</p>
                                 <p><i class="glyphicon glyphicon-eye-open">{{$text->views}}</i>
                                     <i class="glyphicon glyphicon-star other">{{(int)$text->score ? $text->score : "\\"}}</i>
                                     <i class="glyphicon glyphicon-comment other">{{$text->comment_numbers}}</i>
@@ -95,7 +95,7 @@
                             <a href="/detail/{{ $download->id }}">
                                 <h4><span><img src="{{ $download->cover }}"
                                                onerror="this.src='/img/onError.jpg'"></span>{{ $download->title }}</h4>
-
+                                <p class="video-introduce-text">{{$download->introduce}}</p>
                                 <p><i class="glyphicon glyphicon-eye-open">{{ $download->views }}</i>
                                     <i class="glyphicon glyphicon-star other">{{ (int)$download->score ? $video->score : "\\" }}</i>
                                     <i class="glyphicon glyphicon-comment other">{{$download->comment_numbers}}</i>

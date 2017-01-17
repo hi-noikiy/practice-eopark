@@ -111,6 +111,7 @@
 
         td > img {
             max-height: 2.5em;
+            max-width: 4em;
         }
 
         .page_bottom {

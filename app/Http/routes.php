@@ -145,13 +145,13 @@ Route::group([
              ->middleware('updateCache:category_properties');
 
 
-        //member
-        Route::get('/member', 'MemberController@index');
-        Route::get('/member/add', 'MemberController@add');
-        Route::get('/member/add', 'MemberController@add');
-        Route::get('/member/delete/{id}', "MemberController@delete");
-        Route::get('/member/edit/{id}', "MemberController@edit");
-        Route::get('/member/editSave/{id}', "MemberController@editSave");
+        //user
+        Route::get('/user', 'UserController@index');
+        Route::get('/user/add', 'UserController@add');
+        Route::get('/user/add', 'UserController@add');
+        Route::get('/user/delete/{id}', "UserController@delete");
+        Route::get('/user/edit/{id}', "UserController@edit");
+        Route::get('/user/edit/{id}/save', "UserController@editSave");
 
         //brand
         Route::get('/brand', 'BrandController@index');
