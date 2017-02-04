@@ -36,8 +36,10 @@ Route::group([
     /*resources*/
     Route::get("/resources/{categoryId}", "ResourcesController@index")->where('categoryId', '[0-9]+');
     Route::get("/resources/{categoryId}/filter/{filterStr}", "ResourcesController@filter")
-         ->where('categoryId', '[0-9]+');
-    Route::get("/resources/{categoryId}/filter", function ($categoryId) { return redirect("resources/{$categoryId}"); });
+        ->where('categoryId', '[0-9]+');
+    Route::get("/resources/{categoryId}/filter", function ($categoryId) {
+        return redirect("resources/{$categoryId}");
+    });
 
     /*feedback*/
     Route::get('/feedback/invalid/{resourceId}', 'FeedbackController@invalid')->where('resourceId', '[0-9]+');
@@ -62,6 +64,9 @@ Route::group([
 
     /*official*/
     Route::get('/official/touch', 'OfficialController@touch');
+
+    /*vitae*/
+    Route::get('/vitae', 'VitaeController@index');
 
 });
 
@@ -89,7 +94,9 @@ Route::group([
     //退出登录
     Route::get('logout', "AuthController@logout");
 
-    Route::get('transfer', function () { return view('admin.transfer'); });
+    Route::get('transfer', function () {
+        return view('admin.transfer');
+    });
     Route::group([
         'middleware' => 'adminAuth'
     ], function () {
@@ -107,7 +114,9 @@ Route::group([
         Route::group([
             'middleware' => 'updateCache:category'
         ], function () {
-            Route::get('/category/update', function () { return; });
+            Route::get('/category/update', function () {
+                return;
+            });
             Route::get('/category/editSave', "CategoryController@editSave");
             Route::get('/category/delete/{id}', "CategoryController@delete");
             Route::get('/category/addSave', "CategoryController@addSave");
@@ -130,9 +139,13 @@ Route::group([
 
         //property
         Route::get('/property', "PropertyController@all");
-        Route::get('/property/addProp', function () { return view("admin.property_add"); });
+        Route::get('/property/addProp', function () {
+            return view("admin.property_add");
+        });
         Route::get('/property/addProp/save', "PropertyController@addPropSave");
-        Route::get('/property/addValue/{propId}', function ($propId) { return view("admin.property_value_add", ["propId" => $propId]); });
+        Route::get('/property/addValue/{propId}', function ($propId) {
+            return view("admin.property_value_add", ["propId" => $propId]);
+        });
         Route::get('/property/addValue/{propId}/save', "PropertyController@addValueSave");
         Route::get('/property/deleteProp/{propId}', "PropertyController@deleteProp");
         Route::get('/property/deletePropValue/{valueId}', "PropertyController@deletePropValue");
@@ -142,7 +155,7 @@ Route::group([
         Route::get('/property/editValue/{id}/save', "PropertyController@editValueSave");
         Route::get('/property/assignCategory/{id}', "PropertyController@assignCategory");
         Route::get('/property/assignCategory/{id}/save', "PropertyController@assignCategorySave")
-             ->middleware('updateCache:category_properties');
+            ->middleware('updateCache:category_properties');
 
 
         //user
@@ -155,7 +168,9 @@ Route::group([
 
         //brand
         Route::get('/brand', 'BrandController@index');
-        Route::get('/brand/add', function () { return view("admin.brand_add"); });
+        Route::get('/brand/add', function () {
+            return view("admin.brand_add");
+        });
         Route::post('/brand/add/save', 'BrandController@addSave');
         Route::get('/brand/edit/{id}', 'BrandController@edit');
         Route::post('/brand/edit/{id}/save', 'BrandController@editSave');

@@ -234,6 +234,7 @@ $(document).ready(function () {
             this.jump = function (item) {
                 if (!isMoving) {
                     var url = self.getCurrentGrid(item, ".my-grid-stack-item").attr('data-gs-href');
+                    console.log(url);
                     window.open(url);
                 }
             };
