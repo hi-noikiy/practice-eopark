@@ -239,7 +239,7 @@
                         <p>1.1</p></div>
                     <div class="blog-text">
                         <a href="http://www.baozho.com" title="http://www.baozho.com"
-                           target="view">ECMALL多用户商城系统+后台管理系统</a>
+                           target="_view">ECMALL多用户商城系统+后台管理系统</a>
                         <div class="stripa"></div>
                         <p>框架：ECMALL;
                             <br/>
@@ -258,10 +258,10 @@
                     <div class="project-name"><p class="project-title">baozho.com</p>
                         <p>1.2</p></div>
                     <div class="blog-text">
-                        <a href="http://www.baozho.com" title="http://www.baozho.com" target="view">多渠道收银系统</a>
+                        <a href="http://www.baozho.com" title="http://www.baozho.com" target="_view">多渠道收银系统</a>
                         <div class="stripa"></div>
                         <p>
-                            介绍：<br/>1. 支持微信、支付宝、QQ钱包、百度钱包、京东钱包支付 <a href="/img/vitae/qrcode.jpg" target="view" class="taste">体验</a>；
+                            介绍：<br/>1. 支持微信、支付宝、QQ钱包、百度钱包、京东钱包支付 <a href="/img/vitae/qrcode.jpg" target="_view" class="taste">体验</a>；
                             <br/>
                             2. 先付款，后关注微信公众号，区分用户领取优惠券，再次消费抵用;
                             <br/>
@@ -279,14 +279,14 @@
                     <div class="project-name"><p class="project-title">baozho.com</p>
                         <p>1.3</p></div>
                     <div class="blog-text">
-                        <a href="http://www.baozho.com" title="http://www.baozho.com" target="view">微信公众号+微信支付服务商</a>
+                        <a href="http://www.baozho.com" title="http://www.baozho.com" target="_view">微信公众号+微信支付服务商</a>
                         <div class="stripa"></div>
                         <p>
                             框架：ECMALL;
                             <br/>
                             环境：阿里云wamp;
                             <br/>
-                            介绍：<br/>1. 公众号名称：<a href="/img/vitae/gw.jpg" target="view" class="taste">宝众商城</a>；
+                            介绍：<br/>1. 公众号名称：<a href="/img/vitae/gw.jpg" target="_view" class="taste">宝众商城</a>；
                             <br/>
                             2. 公众号开发相关内容;
                             <br/>
@@ -306,7 +306,7 @@
                     <div class="project-name"><p class="project-title">apple-cq.vip</p>
                         <p>2</p></div>
                     <div class="blog-text">
-                        <a href="http://www.apple-cq.vip" title="http://www.apple-cq.vip" target="view">APPLE设备维修店官网</a>
+                        <a href="http://www.apple-cq.vip" title="http://www.apple-cq.vip" target="_view">APPLE设备维修店官网</a>
                         <div class="stripa"></div>
                         <p>
                             框架：Thinkphp 3.2;
@@ -332,7 +332,7 @@
                     <div class="project-name"><p class="project-title">eopark.com</p>
                         <p>3.1</p></div>
                     <div class="blog-text">
-                        <a href="http://www.eopark.com" title="http://www.eopark.com" target="view">互联网资源共享平台</a>
+                        <a href="http://www.eopark.com" title="http://www.eopark.com" target="_view">互联网资源共享平台</a>
                         <div class="stripa"></div>
                         <p>
                             框架：laravel 5.2;
@@ -344,8 +344,8 @@
                             2. 大量使用AJAX，包括<a href="http://eopark.com/thanksgiving" class="taste" target="_view"
                                              title="http://eopark.com/thanksgiving">图片上传</a>;
                             <br/>
-                            3. 资源按<a href="http://eopark.com/resources/44" class="taste" target="_view"
-                                     title="http://eopark.com/resources/44">属性筛选</a>
+                            3. 资源按<a href="http://eopark.com/resources/48" class="taste" target="_view"
+                                     title="http://eopark.com/resources/48">属性筛选</a>
                             <br/>
                             4. 正在学习Python，预实现资源自动抓爬;
                         </p>
