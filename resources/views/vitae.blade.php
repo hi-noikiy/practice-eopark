@@ -35,7 +35,7 @@
     <div class="container">
         <div class="banner-info">
             <div class="banner-left">
-                <img src="/img/vitae/qskane.jpg" alt="" style="width: 16em;border-radius:16em;" />
+                <img src="/img/vitae/qskane_head.jpeg" alt="" style="width: 16em;border-radius:1em;" />
             </div>
             <div class="banner-right">
                 <h1>秦胜坤</h1>
