@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Home</title>
+    <title>秦胜坤</title>
     <!--fonts-->
     <link href='http://fonts.useso.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet'
           type='text/css'>
@@ -35,7 +35,7 @@
     <div class="container">
         <div class="banner-info">
             <div class="banner-left">
-                <img src="/img/vitae/1.png" alt=""/>
+                <img src="/img/vitae/qskane.jpg" alt="" style="width: 16em;border-radius:16em;" />
             </div>
             <div class="banner-right">
                 <h1>秦胜坤</h1>
